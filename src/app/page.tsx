@@ -1,4 +1,8 @@
-import Reveal from "@/components/Reveal"; // ✅ NEW
+import Reveal from "@/components/Reveal"; 
+import StackCard from "@/components/StackCard";
+import ArrowDownLg from "@/components/ArrowDownLg";
+
+
 
 export default function Home() {
   return (
