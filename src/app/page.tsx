@@ -1,6 +1,10 @@
 import Reveal from "@/components/Reveal"; 
 import StackCard from "@/components/StackCard";
 import ArrowDownLg from "@/components/ArrowDownLg";
+import WideCard from "@/components/WideCard";
+import MiniCard from "@/components/MiniCard";
+import Pill from "@/components/Pill";
+import ArrowDown from "@/components/ArrowDown";
 
 
 
