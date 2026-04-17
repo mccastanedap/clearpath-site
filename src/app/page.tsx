@@ -28,7 +28,7 @@ export default function Home() {
                   of your inventory again
                 </h1>
 
-                <p className="mt-6 max-w-md text-base text-white/75">
+                <p className="mt-6 max-w-md text-base text-white [text-shadow:0_1px_6px_rgba(0,0,0,0.6)]">
                   We help small and mid-sized retailers improve inventory
                   decisions using analytics, automation, and scalable cloud
                   data infrastructure.
@@ -43,7 +43,7 @@ export default function Home() {
                   </a>
                   <a
                     href="#how-it-works"
-                    className="rounded-full border border-white/30 px-7 py-3 text-sm font-semibold text-white hover:bg-white/10 transition"
+                    className="rounded-full border border-white/60 px-7 py-3 text-sm font-semibold text-white hover:bg-white/10 transition"
                   >
                     See How it works
                   </a>
