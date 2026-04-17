@@ -43,8 +43,14 @@ export default function RootLayout({
         <header className="sticky top-0 z-20 border-b border-white/10 bg-[#0F2044]/90 backdrop-blur">
           <div className="mx-auto flex max-w-6xl flex-col gap-3 px-5 py-4 md:flex-row md:items-center md:justify-between">
             {/* Logo + Name */}
-            <a href="#top">
+            <a href="#top" className="flex items-center gap-3">
               <img src="/logo.svg" alt="Clearpath Data" className="h-10 w-auto" />
+              <div className="leading-[1.2]">
+                <div className="text-base font-semibold">
+                  <span className="text-white">Clear</span><span className="text-[#ef9f38]">path</span>
+                </div>
+                <div className="text-[11px] font-bold tracking-[0.2em] text-[#64b8c0]">DATA</div>
+              </div>
             </a>
 
             {/* Nav */}
@@ -74,7 +80,15 @@ export default function RootLayout({
           <div className="mx-auto max-w-6xl px-5 py-12 grid gap-10 md:grid-cols-2">
             {/* Left */}
             <div className="space-y-4">
-              <img src="/logo.svg" alt="Clearpath Data" className="h-10 w-auto" />
+              <div className="flex items-center gap-3">
+                <img src="/logo.svg" alt="Clearpath Data" className="h-10 w-auto" />
+                <div className="leading-[1.2]">
+                  <div className="text-base font-semibold">
+                    <span className="text-white">Clear</span><span className="text-[#ef9f38]">path</span>
+                  </div>
+                  <div className="text-[11px] font-bold tracking-[0.2em] text-[#64b8c0]">DATA</div>
+                </div>
+              </div>
 
               <p className="text-sm text-neutral-400 max-w-sm">
                 Data-driven inventory analytics for modern retailers.
