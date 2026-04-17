@@ -30,9 +30,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="min-h-screen bg-[#1A2E4A] text-neutral-950 antialiased">
+      <body className="min-h-screen bg-[#0F2044] text-neutral-950 antialiased">
         {/* HEADER */}
-        <header className="sticky top-0 z-20 border-b border-white/10 bg-[#1A2E4A]/90 backdrop-blur">
+        <header className="sticky top-0 z-20 border-b border-white/10 bg-[#0F2044]/90 backdrop-blur">
           <div className="mx-auto flex max-w-6xl flex-col gap-3 px-5 py-4 md:flex-row md:items-center md:justify-between">
             {/* Logo + Name */}
             <a href="#top" className="flex items-center gap-3">
@@ -41,9 +41,12 @@ export default function RootLayout({
                 alt="Clearpath Data"
                 className="h-8 w-auto"
               />
-              <span className="font-semibold tracking-tight text-white">
-                Clearpath <span className="text-[#4ABFA5]">DATA</span>
-              </span>
+              <div className="leading-tight">
+                <div className="text-sm font-semibold tracking-tight">
+                  <span className="text-white">Clear</span><span className="text-[#F5A623]">path</span>
+                </div>
+                <div className="text-xs font-bold tracking-widest text-[#4ABFA5]">DATA</div>
+              </div>
             </a>
 
             {/* Nav */}
@@ -69,7 +72,7 @@ export default function RootLayout({
         <main>{children}</main>
 
         {/* FOOTER */}
-        <footer className="bg-[#1A2E4A] border-t border-white/10">
+        <footer className="bg-[#0F2044] border-t border-white/10">
           <div className="mx-auto max-w-6xl px-5 py-12 grid gap-10 md:grid-cols-2">
             {/* Left */}
             <div className="space-y-4">
@@ -79,9 +82,12 @@ export default function RootLayout({
                   alt="Clearpath Data"
                   className="h-8 w-auto"
                 />
-                <span className="font-semibold text-white">
-                  Clearpath <span className="text-[#4ABFA5]">DATA</span>
-                </span>
+                <div className="leading-tight">
+                  <div className="text-sm font-semibold tracking-tight">
+                    <span className="text-white">Clear</span><span className="text-[#F5A623]">path</span>
+                  </div>
+                  <div className="text-xs font-bold tracking-widest text-[#4ABFA5]">DATA</div>
+                </div>
               </div>
 
               <p className="text-sm text-neutral-400 max-w-sm">
