@@ -7,8 +7,28 @@ export default function Home() {
     <div id="top">
 
       {/* ── HERO ─────────────────────────────────────────── */}
-      <section className="bg-[#1A2E4A] py-16 md:py-24">
-        <div className="mx-auto max-w-6xl px-5">
+      <section className="relative overflow-hidden bg-[#0F2044] py-16 md:py-24">
+        {/* Decorative wave shape — mirrors logo path, larger */}
+        <svg
+          className="pointer-events-none absolute right-0 top-0 h-full w-1/2 opacity-100"
+          viewBox="0 0 600 600"
+          preserveAspectRatio="xMidYMid slice"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true"
+        >
+          <path
+            d="M600 0 C480 80, 320 60, 380 200 C440 340, 600 320, 560 460 C520 580, 380 560, 420 600 L600 600 Z"
+            fill="#162B52"
+          />
+          <path
+            d="M600 50 C500 120, 360 100, 420 240 C480 370, 620 350, 590 480 C560 590, 440 580, 470 600 L600 600 Z"
+            fill="#1A3260"
+            opacity="0.6"
+          />
+        </svg>
+
+        <div className="relative mx-auto max-w-6xl px-5">
           <div className="grid gap-12 md:grid-cols-2 md:items-center">
 
             {/* Left copy */}
@@ -38,69 +58,60 @@ export default function Home() {
                     href="#how-it-works"
                     className="rounded-full border border-white/30 px-7 py-3 text-sm font-semibold text-white hover:bg-white/10 transition"
                   >
-                    See how it works
+                    See How it works
                   </a>
                 </div>
               </div>
             </Reveal>
 
-            {/* Right — bar chart + stats */}
+            {/* Right — chart card + stats */}
             <Reveal delay={0.1}>
               <div className="w-full">
                 {/* Chart card */}
-                <div className="rounded-2xl bg-[#162540] p-5">
-                  <p className="mb-1 text-xs font-medium text-neutral-400">
-                    Inventory Health · Last 6 months
+                <div className="rounded-2xl bg-[#162B52] p-5 shadow-lg">
+                  <p className="text-xs font-medium text-neutral-400">
+                    Inventory health · last 8 weeks
                   </p>
-                  <p className="mb-4 text-[11px] text-neutral-600">
-                    Jan 2025 — Jun 2025
-                  </p>
-                  <div className="flex items-end gap-2 h-32">
-                    {[
-                      { h: 42, accent: false },
-                      { h: 58, accent: false },
-                      { h: 47, accent: false },
-                      { h: 72, accent: false },
-                      { h: 61, accent: false },
-                      { h: 88, accent: true },
-                    ].map((bar, i) => (
+                  <div className="mt-4 flex items-end gap-[6px] h-28">
+                    {[38, 52, 44, 60, 55, 68, 62, 88].map((h, i) => (
                       <div
                         key={i}
                         className="flex-1 rounded-sm"
                         style={{
-                          height: `${bar.h}%`,
-                          backgroundColor: bar.accent ? "#F5A623" : "#2D5B8A",
+                          height: `${h}%`,
+                          backgroundColor: i === 7 ? "#F5A623" : "#2D5B8A",
                         }}
                       />
                     ))}
                   </div>
-                  <div className="mt-2 flex justify-between text-[10px] text-neutral-500">
-                    {["Jan", "Feb", "Mar", "Apr", "May", "Jun"].map((m) => (
-                      <span key={m}>{m}</span>
-                    ))}
-                  </div>
-                </div>
 
-                {/* Stats row */}
-                <div className="mt-5 grid grid-cols-3 gap-4">
-                  <div className="rounded-xl bg-[#162540] px-4 py-3">
-                    <div className="text-2xl font-bold text-white">94+</div>
-                    <div className="mt-0.5 text-[11px] text-neutral-400">
-                      Stock health
-                    </div>
+                  {/* Alert row */}
+                  <div className="mt-4 flex items-center justify-between rounded-lg bg-[#0F2044] px-3 py-2">
+                    <span className="text-[11px] text-neutral-400">
+                      Product #A1203 · Low stock alert
+                    </span>
+                    <span className="rounded-full bg-[#F5A623] px-2.5 py-0.5 text-[10px] font-semibold text-white">
+                      Reorder now
+                    </span>
                   </div>
-                  <div className="rounded-xl bg-[#162540] px-4 py-3">
-                    <div className="text-2xl font-bold text-white">3</div>
-                    <div className="mt-0.5 text-[11px] text-neutral-400">
-                      Providers ready
+
+                  {/* Stats */}
+                  <div className="mt-3 grid grid-cols-3 divide-x divide-white/10">
+                    <div className="pr-3">
+                      <div className="text-lg font-bold text-white">
+                        94 <span className="text-[#4ABFA5] text-sm">↑</span>
+                      </div>
+                      <div className="text-[10px] text-neutral-500">Stock health</div>
                     </div>
-                  </div>
-                  <div className="rounded-xl bg-[#162540] px-4 py-3">
-                    <div className="text-2xl font-bold text-[#4ABFA5]">
-                      12%+
+                    <div className="px-3">
+                      <div className="text-lg font-bold text-white">3</div>
+                      <div className="text-[10px] text-neutral-500">Reorder signals</div>
                     </div>
-                    <div className="mt-0.5 text-[11px] text-neutral-400">
-                      Efficiency gain
+                    <div className="pl-3">
+                      <div className="text-lg font-bold text-white">
+                        12% <span className="text-red-400 text-sm">↓</span>
+                      </div>
+                      <div className="text-[10px] text-neutral-500">Overstock</div>
                     </div>
                   </div>
                 </div>
