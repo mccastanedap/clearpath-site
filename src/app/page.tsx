@@ -7,27 +7,14 @@ export default function Home() {
     <div id="top">
 
       {/* ── HERO ─────────────────────────────────────────── */}
-      <section className="relative overflow-hidden bg-[#0F2044] py-16 md:py-24">
-        {/* Decorative wave shape — mirrors logo path, larger */}
-        <svg
-          className="pointer-events-none absolute right-0 top-0 h-full w-1/2 opacity-100"
-          viewBox="0 0 600 600"
-          preserveAspectRatio="xMidYMid slice"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          aria-hidden="true"
-        >
-          <path
-            d="M600 0 C480 80, 320 60, 380 200 C440 340, 600 320, 560 460 C520 580, 380 560, 420 600 L600 600 Z"
-            fill="#162B52"
-          />
-          <path
-            d="M600 50 C500 120, 360 100, 420 240 C480 370, 620 350, 590 480 C560 590, 440 580, 470 600 L600 600 Z"
-            fill="#1A3260"
-            opacity="0.6"
-          />
-        </svg>
-
+      <section
+        className="relative overflow-hidden py-16 md:py-24"
+        style={{
+          backgroundImage: "url('/Hero.png')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      >
         <div className="relative mx-auto max-w-6xl px-5">
           <div className="grid gap-12 md:grid-cols-2 md:items-center">
 
