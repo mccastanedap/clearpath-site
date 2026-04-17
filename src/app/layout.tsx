@@ -1,5 +1,13 @@
 import type { Metadata } from "next";
+import { Space_Grotesk } from "next/font/google";
 import "./globals.css";
+
+const spaceGrotesk = Space_Grotesk({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-space-grotesk",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: "Clearpath Data",
@@ -29,8 +37,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className="min-h-screen bg-[#0F2044] text-neutral-950 antialiased">
+    <html lang="en" className={spaceGrotesk.variable}>
+      <body className={`${spaceGrotesk.className} min-h-screen bg-[#0F2044] text-neutral-950 antialiased`}>
         {/* HEADER */}
         <header className="sticky top-0 z-20 border-b border-white/10 bg-[#0F2044]/90 backdrop-blur">
           <div className="mx-auto flex max-w-6xl flex-col gap-3 px-5 py-4 md:flex-row md:items-center md:justify-between">
@@ -39,13 +47,13 @@ export default function RootLayout({
               <img
                 src="/logo.svg"
                 alt="Clearpath Data"
-                className="h-8 w-auto"
+                className="h-9 w-auto"
               />
-              <div className="leading-tight">
-                <div className="text-sm font-semibold tracking-tight">
-                  <span className="text-white">Clear</span><span className="text-[#F5A623]">path</span>
+              <div className="leading-[1.15]">
+                <div className="text-sm font-medium tracking-tight">
+                  <span className="text-white">Clear</span><span className="text-[#ef9f38]">path</span>
                 </div>
-                <div className="text-xs font-bold tracking-widest text-[#4ABFA5]">DATA</div>
+                <div className="text-xs font-bold tracking-[0.2em] text-[#64b8c0]">DATA</div>
               </div>
             </a>
 
@@ -61,7 +69,7 @@ export default function RootLayout({
             {/* CTA */}
             <a
               href="#contact"
-              className="inline-flex w-fit rounded-full bg-[#4ABFA5] px-5 py-2 text-sm font-semibold text-white hover:opacity-90 transition"
+              className="inline-flex w-fit rounded-full bg-[#64b8c0] px-5 py-2 text-sm font-semibold text-white hover:opacity-90 transition"
             >
               Contact us
             </a>
@@ -80,13 +88,13 @@ export default function RootLayout({
                 <img
                   src="/logo.svg"
                   alt="Clearpath Data"
-                  className="h-8 w-auto"
+                  className="h-9 w-auto"
                 />
-                <div className="leading-tight">
-                  <div className="text-sm font-semibold tracking-tight">
-                    <span className="text-white">Clear</span><span className="text-[#F5A623]">path</span>
+                <div className="leading-[1.15]">
+                  <div className="text-sm font-medium tracking-tight">
+                    <span className="text-white">Clear</span><span className="text-[#ef9f38]">path</span>
                   </div>
-                  <div className="text-xs font-bold tracking-widest text-[#4ABFA5]">DATA</div>
+                  <div className="text-xs font-bold tracking-[0.2em] text-[#64b8c0]">DATA</div>
                 </div>
               </div>
 
@@ -106,19 +114,19 @@ export default function RootLayout({
             {/* Right */}
             <div className="flex md:justify-end">
               <nav className="flex flex-col gap-2 text-sm text-neutral-400">
-                <a href="#who-its-for" className="hover:text-[#4ABFA5] transition">
+                <a href="#who-its-for" className="hover:text-[#64b8c0] transition">
                   Who is this for
                 </a>
-                <a href="#how-it-works" className="hover:text-[#4ABFA5] transition">
+                <a href="#how-it-works" className="hover:text-[#64b8c0] transition">
                   How it works
                 </a>
-                <a href="#architecture" className="hover:text-[#4ABFA5] transition">
+                <a href="#architecture" className="hover:text-[#64b8c0] transition">
                   Architecture
                 </a>
-                <a href="#early-access" className="hover:text-[#4ABFA5] transition">
+                <a href="#early-access" className="hover:text-[#64b8c0] transition">
                   Early Access
                 </a>
-                <a href="#contact" className="hover:text-[#4ABFA5] transition">
+                <a href="#contact" className="hover:text-[#64b8c0] transition">
                   Contact
                 </a>
               </nav>
