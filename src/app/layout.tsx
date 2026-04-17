@@ -41,31 +41,31 @@ export default function RootLayout({
       <body className={`${spaceGrotesk.className} min-h-screen bg-[#0F2044] text-neutral-950 antialiased`}>
         {/* HEADER */}
         <header className="sticky top-0 z-20 border-b border-white/10 bg-[#0F2044]/90 backdrop-blur">
-          <div className="mx-auto flex max-w-6xl flex-col gap-3 px-5 py-4 md:flex-row md:items-center md:justify-between">
-            {/* Logo + Name */}
-            <a href="#top" className="flex items-center gap-3">
-              <img src="/logo.svg" alt="Clearpath Data" className="h-10 w-auto" />
-              <div className="leading-[1.2]">
-                <div className="text-base font-semibold">
-                  <span className="text-white">Clear</span><span className="text-[#ef9f38]">path</span>
+          <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4">
+            {/* Logo + Nav juntos a la izquierda */}
+            <div className="flex items-center gap-8">
+              <a href="#top" className="flex items-center gap-3 flex-shrink-0">
+                <img src="/logo.svg" alt="Clearpath Data" className="h-10 w-auto" />
+                <div className="leading-[1.2]">
+                  <div className="text-base font-semibold">
+                    <span className="text-white">Clear</span><span className="text-[#ef9f38]">path</span>
+                  </div>
+                  <div className="text-[11px] font-bold tracking-[0.2em] text-[#64b8c0]">DATA</div>
                 </div>
-                <div className="text-[11px] font-bold tracking-[0.2em] text-[#64b8c0]">DATA</div>
-              </div>
-            </a>
+              </a>
+              <nav className="hidden md:flex items-center gap-6">
+                <NavItem href="#who-its-for">Who is this for</NavItem>
+                <NavItem href="#how-it-works">How it works</NavItem>
+                <NavItem href="#architecture">Architecture</NavItem>
+                <NavItem href="#early-access">Early Access</NavItem>
+                <NavItem href="#why-it-matters">Why it matters</NavItem>
+              </nav>
+            </div>
 
-            {/* Nav */}
-            <nav className="flex flex-wrap items-center gap-x-6 gap-y-2">
-              <NavItem href="#who-its-for">Who is this for</NavItem>
-              <NavItem href="#how-it-works">How it works</NavItem>
-              <NavItem href="#architecture">Architecture</NavItem>
-              <NavItem href="#early-access">Early Access</NavItem>
-              <NavItem href="#why-it-matters">Why it matters</NavItem>
-            </nav>
-
-            {/* CTA */}
+            {/* CTA a la derecha */}
             <a
               href="#contact"
-              className="inline-flex w-fit rounded-full bg-[#64b8c0] px-5 py-2 text-sm font-semibold text-white hover:opacity-90 transition"
+              className="inline-flex rounded-full bg-[#64b8c0] px-5 py-2 text-sm font-semibold text-white hover:opacity-90 transition"
             >
               Contact us
             </a>

@@ -28,7 +28,7 @@ export default function Home() {
                   of your inventory again
                 </h1>
 
-                <p className="mt-6 max-w-md text-base text-neutral-300">
+                <p className="mt-6 max-w-md text-base text-white/75">
                   We help small and mid-sized retailers improve inventory
                   decisions using analytics, automation, and scalable cloud
                   data infrastructure.
@@ -234,51 +234,47 @@ export default function Home() {
             </p>
           </Reveal>
 
-          {/* Horizontal pill flow */}
+          {/* Pills + descriptions: cada columna tiene su pill encima y su texto abajo */}
           <Reveal delay={0.1}>
-            <div className="mt-10 flex flex-col md:flex-row items-center gap-0">
+            <div className="mt-10 grid md:grid-cols-4 gap-6">
               {[
-                { label: "Data Sources", sub: "POS · Inventory · Sales", first: true },
-                { label: "Ingestion & Validation", sub: "", first: false },
-                { label: "Analytics & Modeling", sub: "", first: false },
-                { label: "Insights Layer", sub: "", first: false },
-              ].map((pill, i, arr) => (
-                <div key={pill.label} className="flex flex-col md:flex-row items-center">
-                  <div className={`rounded-full px-6 py-3 text-center min-w-[160px] ${pill.first ? "bg-[#112b50]" : "bg-[#1e3a5f]"}`}>
-                    <div className="text-sm font-semibold text-white">{pill.label}</div>
-                    {pill.sub && <div className="mt-0.5 text-[11px] text-neutral-400">{pill.sub}</div>}
+                {
+                  label: "Data Sources",
+                  sub: "POS · Inventory · Sales",
+                  desc: "Data ingestion — POS, inventory, and sales data ingested through standardized exports.",
+                },
+                {
+                  label: "Ingestion & Validation",
+                  sub: "",
+                  desc: "Validation & normalization — Rule-based checks ensure schema consistency and data quality.",
+                },
+                {
+                  label: "Analytics & Modeling",
+                  sub: "",
+                  desc: "Analytics & modeling — Standardized models support trend analysis, inventory health, and forecasting.",
+                },
+                {
+                  label: "Insights Layer",
+                  sub: "",
+                  desc: "Insight delivery — Clear outputs for reordering decisions and performance monitoring.",
+                },
+              ].map((item, i, arr) => (
+                <div key={item.label} className="relative flex flex-col">
+                  {/* Pill */}
+                  <div className={`rounded-full px-5 py-3 text-center ${i === 0 ? "bg-[#112b50]" : "bg-[#1e3a5f]"}`}>
+                    <div className="text-sm font-semibold text-white leading-tight">{item.label}</div>
+                    {item.sub && <div className="mt-0.5 text-[11px] text-neutral-400">{item.sub}</div>}
                   </div>
+                  {/* Arrow between pills (desktop) */}
                   {i < arr.length - 1 && (
-                    <div className="text-[#64b8c0] text-xl px-3 py-2 md:py-0 rotate-90 md:rotate-0 select-none">
-                      →
-                    </div>
+                    <span className="hidden md:block absolute -right-4 top-3 text-[#64b8c0] text-lg select-none">→</span>
                   )}
+                  {/* Description */}
+                  <p className="mt-5 text-sm leading-relaxed text-neutral-600">{item.desc}</p>
                 </div>
               ))}
             </div>
           </Reveal>
-
-          {/* Descriptions */}
-          <div className="mt-10 grid gap-6 md:grid-cols-4">
-            {[
-              {
-                desc: "Data ingestion — POS, inventory, and sales data ingested through standardized exports.",
-              },
-              {
-                desc: "Validation & normalization — Rule-based checks ensure schema consistency and data quality.",
-              },
-              {
-                desc: "Analytics & modeling — Standardized models support trend analysis, inventory health, and forecasting.",
-              },
-              {
-                desc: "Insight delivery — Clear outputs for reordering decisions and performance monitoring.",
-              },
-            ].map((item, i) => (
-              <Reveal key={i} delay={i * 0.07}>
-                <p className="text-sm leading-relaxed text-neutral-600">{item.desc}</p>
-              </Reveal>
-            ))}
-          </div>
         </div>
       </section>
 
