@@ -23,7 +23,7 @@ export default function Home() {
               <div>
                 <h1 className="text-4xl font-semibold tracking-tight text-white md:text-5xl leading-tight">
                   Never lose{" "}
-                  <span className="text-[#F5A623]">track</span>
+                  <span className="text-[#ef9f38]">track</span>
                   <br />
                   of your inventory again
                 </h1>
@@ -37,7 +37,7 @@ export default function Home() {
                 <div className="mt-8 flex flex-wrap gap-3">
                   <a
                     href="#contact"
-                    className="rounded-full bg-[#4ABFA5] px-7 py-3 text-sm font-semibold text-white hover:opacity-90 transition"
+                    className="rounded-full bg-[#64b8c0] px-7 py-3 text-sm font-semibold text-white hover:opacity-90 transition"
                   >
                     Contact us
                   </a>
@@ -66,7 +66,7 @@ export default function Home() {
                         className="flex-1 rounded-sm"
                         style={{
                           height: `${h}%`,
-                          backgroundColor: i === 7 ? "#F5A623" : "#2D5B8A",
+                          backgroundColor: i === 7 ? "#ef9f38" : "#2D5B8A",
                         }}
                       />
                     ))}
@@ -77,7 +77,7 @@ export default function Home() {
                     <span className="text-[11px] text-neutral-400">
                       Product #A1203 · Low stock alert
                     </span>
-                    <span className="rounded-full bg-[#F5A623] px-2.5 py-0.5 text-[10px] font-semibold text-white">
+                    <span className="rounded-full bg-[#ef9f38] px-2.5 py-0.5 text-[10px] font-semibold text-white">
                       Reorder now
                     </span>
                   </div>
@@ -86,7 +86,7 @@ export default function Home() {
                   <div className="mt-3 grid grid-cols-3 divide-x divide-white/10">
                     <div className="pr-3">
                       <div className="text-lg font-bold text-white">
-                        94 <span className="text-[#4ABFA5] text-sm">↑</span>
+                        94 <span className="text-[#64b8c0] text-sm">↑</span>
                       </div>
                       <div className="text-[10px] text-neutral-500">Stock health</div>
                     </div>
@@ -236,7 +236,7 @@ export default function Home() {
                 { label: "Insights Layer", sub: "Outputs · Monitoring · Decisions" },
               ].map((pill, i, arr) => (
                 <div key={pill.label} className="flex flex-col md:flex-row items-center">
-                  <div className="rounded-full bg-[#2D5B8A] border border-[#4ABFA5]/30 px-6 py-3 text-center min-w-[160px]">
+                  <div className="rounded-full bg-[#2D5B8A] border border-[#64b8c0]/30 px-6 py-3 text-center min-w-[160px]">
                     <div className="text-sm font-semibold text-white whitespace-nowrap">
                       {pill.label}
                     </div>
@@ -245,7 +245,7 @@ export default function Home() {
                     </div>
                   </div>
                   {i < arr.length - 1 && (
-                    <div className="text-[#4ABFA5] text-xl px-3 py-2 md:py-0 rotate-90 md:rotate-0">
+                    <div className="text-[#64b8c0] text-xl px-3 py-2 md:py-0 rotate-90 md:rotate-0">
                       →
                     </div>
                   )}
@@ -276,7 +276,7 @@ export default function Home() {
             ].map((item, i) => (
               <Reveal key={item.title} delay={i * 0.07}>
                 <div>
-                  <h3 className="text-sm font-semibold text-[#4ABFA5]">
+                  <h3 className="text-sm font-semibold text-[#64b8c0]">
                     {item.title}
                   </h3>
                   <p className="mt-2 text-xs leading-relaxed text-neutral-400">
@@ -329,7 +329,7 @@ export default function Home() {
             <div className="mt-10">
               <a
                 href="#contact"
-                className="inline-flex rounded-full bg-[#4ABFA5] px-10 py-4 text-sm font-semibold text-white shadow-sm hover:opacity-90 transition"
+                className="inline-flex rounded-full bg-[#64b8c0] px-10 py-4 text-sm font-semibold text-white shadow-sm hover:opacity-90 transition"
               >
                 Request Early Access
               </a>
@@ -388,7 +388,7 @@ export default function Home() {
               <div>
                 Email:{" "}
                 <a
-                  className="text-[#1F3A5F] underline hover:text-[#4ABFA5] transition"
+                  className="text-[#1F3A5F] underline hover:text-[#64b8c0] transition"
                   href="mailto:clearpathdata@gmail.com"
                 >
                   clearpathdata@gmail.com

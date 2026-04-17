@@ -13,7 +13,7 @@ export default function MiniCard({ title, children, icon, dark = false }: MiniCa
   if (dark) {
     return (
       <div className="rounded-2xl bg-[#162540] px-6 py-6">
-        {icon && <div className="mb-3 text-[#4ABFA5]">{icon}</div>}
+        {icon && <div className="mb-3 text-[#64b8c0]">{icon}</div>}
         <h3 className="text-base font-semibold text-white">{title}</h3>
         <p className="mt-2 text-sm leading-relaxed text-neutral-400">{children}</p>
       </div>
