@@ -109,143 +109,147 @@ export default function Home() {
       </section>
 
       {/* ── WHO IS THIS FOR ──────────────────────────────── */}
-      <section id="who-its-for" className="bg-[#F7F9FC] py-16">
+      <section id="who-its-for" className="bg-white py-16">
         <div className="mx-auto max-w-6xl px-5">
           <Reveal>
-            <h2 className="text-center text-3xl font-semibold tracking-tight text-neutral-900">
+            <p className="text-sm font-semibold text-[#ef9f38]">Who is this for</p>
+            <h2 className="mt-2 text-3xl font-bold text-neutral-900">
               Built for teams drowning in inventory complexity
             </h2>
           </Reveal>
 
-          <div className="mt-10 grid gap-6 md:grid-cols-3">
-            <Reveal delay={0.0}>
-              <MiniCard
-                title="Retail teams"
-                icon={
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <div className="mt-10 grid gap-8 md:grid-cols-3">
+            {[
+              {
+                title: "Retail teams",
+                desc: "Managing hundreds of SKUs across locations.",
+                icon: (
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#64b8c0" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
                     <line x1="3" y1="6" x2="21" y2="6" />
                     <path d="M16 10a4 4 0 0 1-8 0" />
                   </svg>
-                }
-              >
-                Managing hundreds of SKUs across locations.
-              </MiniCard>
-            </Reveal>
-
-            <Reveal delay={0.08}>
-              <MiniCard
-                title="Lean teams"
-                icon={
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                ),
+              },
+              {
+                title: "Lean teams",
+                desc: "No dedicated data engineer or analytics team.",
+                icon: (
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#64b8c0" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
                     <circle cx="9" cy="7" r="4" />
                     <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
                     <path d="M16 3.13a4 4 0 0 1 0 7.75" />
                   </svg>
-                }
-              >
-                No dedicated data engineer or analytics team.
-              </MiniCard>
-            </Reveal>
-
-            <Reveal delay={0.16}>
-              <MiniCard
-                title="Inventory getting harder"
-                icon={
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                ),
+              },
+              {
+                title: "Inventory getting harder",
+                desc: "More SKUs, seasonality, suppliers, and stockouts.",
+                icon: (
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#64b8c0" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
                   </svg>
-                }
-              >
-                More SKUs, seasonality, suppliers, and stockouts.
-              </MiniCard>
-            </Reveal>
+                ),
+              },
+            ].map((item, i) => (
+              <Reveal key={item.title} delay={i * 0.08}>
+                <div className="flex items-start gap-4">
+                  <div className="flex-shrink-0 w-14 h-14 rounded-full bg-[#112b50] flex items-center justify-center">
+                    {item.icon}
+                  </div>
+                  <div>
+                    <h3 className="text-base font-bold text-[#64b8c0]">{item.title}</h3>
+                    <p className="mt-1 text-sm text-neutral-600 leading-relaxed">{item.desc}</p>
+                  </div>
+                </div>
+              </Reveal>
+            ))}
           </div>
         </div>
       </section>
 
       {/* ── HOW IT WORKS ─────────────────────────────────── */}
-      <section id="how-it-works" className="bg-[#F7F9FC] py-16">
+      <section id="how-it-works" className="bg-white py-16">
         <div className="mx-auto max-w-6xl px-5">
           <Reveal>
-            <h2 className="text-center text-3xl font-semibold tracking-tight text-neutral-900">
+            <p className="text-sm font-semibold text-[#ef9f38]">How it works</p>
+            <h2 className="mt-2 text-3xl font-bold text-neutral-900">
               Three steps from messy data to clear decisions
             </h2>
-            <p className="mt-3 text-center text-sm text-neutral-500">
+            <p className="mt-2 text-sm text-neutral-500">
               We&apos;re onboarding a limited number of retailers
             </p>
           </Reveal>
 
-          <div className="mt-10 space-y-5">
-            <Reveal delay={0.0}>
-              <WideCard
-                title="Connect your systems"
-                subtitle="Examples: POS · Inventory · Sales exports"
-              >
-                We securely ingest sales, inventory, and POS data from your
-                existing tools. No disruption to your operations.
-              </WideCard>
-            </Reveal>
-
-            <Reveal delay={0.08}>
-              <WideCard
-                title="Act with confidence"
-                subtitle="Outcomes: Fewer stockouts · Reduced overstock · Better cash flow"
-              >
-                You receive clear, actionable insights to improve stock health,
-                optimize reordering, and understand product performance.
-              </WideCard>
-            </Reveal>
-
-            <Reveal delay={0.16}>
-              <WideCard
-                title="Clean &amp; analyze"
-                subtitle="Keywords: Validation · Trends · Forecast-ready"
-              >
-                We validate, standardize, and model your data using automated
-                analytics pipelines built for accuracy and scale.
-              </WideCard>
-            </Reveal>
+          <div className="mt-10 grid gap-6 md:grid-cols-3">
+            {[
+              {
+                title: "Connect your systems",
+                body: "We securely ingest sales, inventory, and POS data from your existing tools. No disruption to your operations.",
+                label: "Examples:",
+                sub: "POS · Inventory · Sales exports",
+              },
+              {
+                title: "Act with confidence",
+                body: "You receive clear, actionable insights to improve stock health, optimize reordering, and understand product performance.",
+                label: "Outcomes:",
+                sub: "Fewer stockouts · Reduced overstock · Better cash flow",
+              },
+              {
+                title: "Clean & analyze",
+                body: "We validate, standardize, and model your data using automated analytics pipelines built for accuracy and scale.",
+                label: "Keywords:",
+                sub: "Validation · Trends · Forecast-ready",
+              },
+            ].map((card, i) => (
+              <Reveal key={card.title} delay={i * 0.08}>
+                <div className="flex flex-col">
+                  <div className="rounded-2xl border border-neutral-200 bg-white px-6 py-7 text-center shadow-sm flex-1">
+                    <h3 className="text-base font-semibold text-neutral-900">{card.title}</h3>
+                    <p className="mt-3 text-sm leading-relaxed text-neutral-600">{card.body}</p>
+                  </div>
+                  <div className="mt-4 text-center">
+                    <span className="text-xs font-semibold text-[#64b8c0]">{card.label}</span>
+                    <p className="mt-0.5 text-xs text-neutral-500">{card.sub}</p>
+                  </div>
+                </div>
+              </Reveal>
+            ))}
           </div>
         </div>
       </section>
 
       {/* ── ARCHITECTURE ─────────────────────────────────── */}
-      <section id="architecture" className="bg-[#1A2E4A] py-16">
-        <div className="mx-auto max-w-5xl px-5">
+      <section id="architecture" className="bg-white py-16">
+        <div className="mx-auto max-w-6xl px-5">
           <Reveal>
-            <h2 className="text-center text-3xl font-semibold tracking-tight text-white">
-              Architecture
-            </h2>
-            <p className="mt-3 text-center text-sm text-neutral-400 max-w-2xl mx-auto">
-              A modular, cloud-ready analytics architecture designed for reliable
-              inventory decision-making. The architecture reflects a reusable
-              analytical framework developed to address recurring inventory
-              decision challenges across different retail environments.
+            <h2 className="text-3xl font-bold text-neutral-900">Architecture</h2>
+            <p className="mt-2 text-sm text-[#64b8c0] italic">
+              A modular, cloud-ready analytics architecture designed for reliable inventory decision-making.
+            </p>
+            <p className="text-sm text-[#64b8c0] italic">
+              The architecture reflects a reusable analytical framework developed to address recurring inventory
+              decision challenges across different retail environments
             </p>
           </Reveal>
 
           {/* Horizontal pill flow */}
           <Reveal delay={0.1}>
-            <div className="mt-12 flex flex-col md:flex-row items-center justify-center gap-0">
+            <div className="mt-10 flex flex-col md:flex-row items-center gap-0">
               {[
-                { label: "Data Sources", sub: "POS · Inventory · Sales" },
-                { label: "Ingestion & Validation", sub: "Schema normalization · Data quality" },
-                { label: "Analytics & Modeling", sub: "Trend analysis · Forecasting" },
-                { label: "Insights Layer", sub: "Outputs · Monitoring · Decisions" },
+                { label: "Data Sources", sub: "POS · Inventory · Sales", first: true },
+                { label: "Ingestion & Validation", sub: "", first: false },
+                { label: "Analytics & Modeling", sub: "", first: false },
+                { label: "Insights Layer", sub: "", first: false },
               ].map((pill, i, arr) => (
                 <div key={pill.label} className="flex flex-col md:flex-row items-center">
-                  <div className="rounded-full bg-[#2D5B8A] border border-[#64b8c0]/30 px-6 py-3 text-center min-w-[160px]">
-                    <div className="text-sm font-semibold text-white whitespace-nowrap">
-                      {pill.label}
-                    </div>
-                    <div className="mt-0.5 text-[11px] text-neutral-400">
-                      {pill.sub}
-                    </div>
+                  <div className={`rounded-full px-6 py-3 text-center min-w-[160px] ${pill.first ? "bg-[#112b50]" : "bg-[#1e3a5f]"}`}>
+                    <div className="text-sm font-semibold text-white">{pill.label}</div>
+                    {pill.sub && <div className="mt-0.5 text-[11px] text-neutral-400">{pill.sub}</div>}
                   </div>
                   {i < arr.length - 1 && (
-                    <div className="text-[#64b8c0] text-xl px-3 py-2 md:py-0 rotate-90 md:rotate-0">
+                    <div className="text-[#64b8c0] text-xl px-3 py-2 md:py-0 rotate-90 md:rotate-0 select-none">
                       →
                     </div>
                   )}
@@ -255,34 +259,23 @@ export default function Home() {
           </Reveal>
 
           {/* Descriptions */}
-          <div className="mt-12 grid gap-6 md:grid-cols-4">
+          <div className="mt-10 grid gap-6 md:grid-cols-4">
             {[
               {
-                title: "Data Sources",
-                desc: "POS, Inventory, and Sales data is ingested and tagged through standardized exports.",
+                desc: "Data ingestion — POS, inventory, and sales data ingested through standardized exports.",
               },
               {
-                title: "Ingestion & Validation",
-                desc: "Table-based schema ensures accurate data, ensuring data quality and consistency.",
+                desc: "Validation & normalization — Rule-based checks ensure schema consistency and data quality.",
               },
               {
-                title: "Analytics & Modeling",
-                desc: "Standardized models support trend analysis, inventory health, and forecasting.",
+                desc: "Analytics & modeling — Standardized models support trend analysis, inventory health, and forecasting.",
               },
               {
-                title: "Insights Layer",
-                desc: "Clear outputs for monitoring decisions and performance-tracking data.",
+                desc: "Insight delivery — Clear outputs for reordering decisions and performance monitoring.",
               },
             ].map((item, i) => (
-              <Reveal key={item.title} delay={i * 0.07}>
-                <div>
-                  <h3 className="text-sm font-semibold text-[#64b8c0]">
-                    {item.title}
-                  </h3>
-                  <p className="mt-2 text-xs leading-relaxed text-neutral-400">
-                    {item.desc}
-                  </p>
-                </div>
+              <Reveal key={i} delay={i * 0.07}>
+                <p className="text-sm leading-relaxed text-neutral-600">{item.desc}</p>
               </Reveal>
             ))}
           </div>
