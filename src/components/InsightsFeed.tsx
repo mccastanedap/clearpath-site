@@ -81,7 +81,7 @@ function TypingDots() {
   );
 }
 
-export default function InsightsFeed() {
+export default function InsightsFeed({ light = false }: { light?: boolean }) {
   const MAX_VISIBLE = 3;
   const [queue, setQueue] = useState([INSIGHTS[0]]);
   const [nextIndex, setNextIndex] = useState(1);
@@ -102,21 +102,31 @@ export default function InsightsFeed() {
     return () => clearTimeout(timer);
   }, [nextIndex]);
 
+  const card = light
+    ? "bg-white border border-neutral-200 shadow-md"
+    : "bg-[#162B52] shadow-xl";
+  const headerBorder = light ? "border-neutral-200" : "border-white/10";
+  const headerText = light ? "text-neutral-700" : "text-neutral-300";
+  const itemBg = light ? "bg-neutral-50 border border-neutral-200" : "bg-[#0F2044] border border-white/10";
+  const productText = light ? "text-neutral-900" : "text-white";
+  const bodyText = light ? "text-neutral-500" : "text-neutral-400";
+  const timeText = light ? "text-neutral-400" : "text-neutral-500";
+
   return (
-    <div className="rounded-2xl bg-[#162B52] p-5 shadow-xl w-full">
+    <div className={`rounded-2xl p-5 w-full ${card}`}>
       {/* Header */}
-      <div className="flex items-center justify-between mb-4 pb-3 border-b border-white/10">
+      <div className={`flex items-center justify-between mb-4 pb-3 border-b ${headerBorder}`}>
         <div className="flex items-center gap-2">
           <span className="relative flex h-2.5 w-2.5">
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#64b8c0] opacity-60" />
             <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#64b8c0]" />
           </span>
-          <span className="text-xs font-semibold text-neutral-300">Clearpath Insights</span>
+          <span className={`text-xs font-semibold ${headerText}`}>Clearpath Insights</span>
         </div>
         <span className="text-[10px] font-medium text-[#64b8c0] uppercase tracking-wider">Live</span>
       </div>
 
-      {/* Fixed-height feed — no layout shift */}
+      {/* Fixed-height feed */}
       <div className="h-[280px] overflow-hidden flex flex-col gap-2">
         <AnimatePresence initial={false}>
           {typing && (
@@ -125,7 +135,7 @@ export default function InsightsFeed() {
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}
-              className="rounded-xl bg-[#0F2044] border border-white/10 overflow-hidden flex-shrink-0"
+              className={`rounded-xl overflow-hidden flex-shrink-0 ${itemBg}`}
             >
               <TypingDots />
             </motion.div>
@@ -138,14 +148,14 @@ export default function InsightsFeed() {
               animate={{ opacity: i === 0 ? 1 : Math.max(0.35, 0.7 - i * 0.2), y: 0 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.3, ease: "easeOut" }}
-              className="rounded-xl bg-[#0F2044] border border-white/10 px-4 py-3 flex-shrink-0"
+              className={`rounded-xl px-4 py-3 flex-shrink-0 ${itemBg}`}
             >
               <div className="flex items-start gap-3">
                 <span className="text-xl leading-none mt-0.5 flex-shrink-0">{insight.emoji}</span>
                 <div className="flex-1 min-w-0">
                   <div className="flex items-center justify-between gap-2">
                     <div className="flex items-center gap-2 flex-wrap">
-                      <span className="text-xs font-semibold text-white">{insight.product}</span>
+                      <span className={`text-xs font-semibold ${productText}`}>{insight.product}</span>
                       <span
                         className="rounded-full px-2 py-0.5 text-[10px] font-semibold"
                         style={{ backgroundColor: insight.tagColor + "28", color: insight.tagColor }}
@@ -153,9 +163,9 @@ export default function InsightsFeed() {
                         {insight.tag}
                       </span>
                     </div>
-                    <span className="text-[10px] text-neutral-500 flex-shrink-0">{insight.time}</span>
+                    <span className={`text-[10px] flex-shrink-0 ${timeText}`}>{insight.time}</span>
                   </div>
-                  <p className="mt-1 text-xs text-neutral-400 leading-relaxed">
+                  <p className={`mt-1 text-xs leading-relaxed ${bodyText}`}>
                     {i === 0 ? (
                       <TypewriterText key={insight.id} text={insight.message} />
                     ) : (
