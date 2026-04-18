@@ -1,6 +1,7 @@
 import Reveal from "@/components/Reveal";
 import WideCard from "@/components/WideCard";
 import MiniCard from "@/components/MiniCard";
+import ContactForm from "@/components/ContactForm";
 
 export default function Home() {
   return (
@@ -369,31 +370,20 @@ export default function Home() {
       </section>
 
       {/* ── CONTACT ──────────────────────────────────────── */}
-      <section id="contact" className="bg-[#F7F9FC] py-16">
-        <div className="mx-auto max-w-4xl px-5 text-center">
+      <section id="contact" className="bg-white py-16">
+        <div className="mx-auto max-w-4xl px-5">
           <Reveal>
-            <h2 className="text-3xl font-semibold tracking-tight text-neutral-900">
-              Contact Us
+            <p className="text-sm font-semibold text-[#ef9f38]">Contact Us</p>
+            <h2 className="mt-2 text-3xl font-bold text-neutral-900">
+              Interested in piloting Clearpath Data or learning more about our approach? Get in touch.
             </h2>
-            <p className="mt-6 text-base text-neutral-700">
-              Interested in piloting Clearpath Data or learning more about our
-              approach? Get in touch.
+            <p className="mt-2 text-sm text-neutral-500">
+              Response time: Typically within 12–24 hours ·{" "}
+              <a className="text-[#64b8c0] hover:underline" href="mailto:clearpathdata@gmail.com">
+                clearpathdata@gmail.com
+              </a>
             </p>
-
-            <div className="mt-8 text-base text-neutral-900">
-              <div>
-                Email:{" "}
-                <a
-                  className="text-[#1F3A5F] underline hover:text-[#64b8c0] transition"
-                  href="mailto:clearpathdata@gmail.com"
-                >
-                  clearpathdata@gmail.com
-                </a>
-              </div>
-              <div className="mt-1 text-sm text-neutral-500">
-                Response time: Typically within 12–24 hours
-              </div>
-            </div>
+            <ContactForm />
           </Reveal>
         </div>
       </section>
