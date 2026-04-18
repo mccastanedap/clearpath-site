@@ -79,7 +79,7 @@ export default function RootLayout({
             {/* Left */}
             <div className="space-y-4">
               <div className="flex items-center gap-3">
-                <img src="/logo.svg" alt="Clearpath Data" className="h-10 w-auto brightness-0 invert" />
+                <img src="/logo-dark.svg" alt="Clearpath Data" className="h-10 w-auto" />
                 <div className="leading-[1.2]">
                   <div className="text-base font-semibold">
                     <span className="text-white">Clear</span><span className="text-[#ef9f38]">path</span>
