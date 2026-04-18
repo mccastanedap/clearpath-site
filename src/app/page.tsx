@@ -287,7 +287,7 @@ export default function Home() {
             <h2 className="mt-2 text-3xl font-bold text-neutral-900">
               Be among the first retailers to pilot Clearpath
             </h2>
-            <p className="mt-2 text-sm text-[#64b8c0] italic">
+            <p className="mt-2 text-sm text-[#112b50] italic">
               We&apos;re onboarding a limited number of retailers to validate the MVP
               in real environments and shape the product roadmap.
             </p>
