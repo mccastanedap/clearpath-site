@@ -1,5 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
-import nodemailer from "nodemailer";
+import sgMail from "@sendgrid/mail";
+
+sgMail.setApiKey(process.env.SENDGRID_API_KEY!);
 
 export async function POST(req: NextRequest) {
   const { name, email, message } = await req.json();
@@ -8,17 +10,9 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: "Missing fields" }, { status: 400 });
   }
 
-  const transporter = nodemailer.createTransport({
-    service: "gmail",
-    auth: {
-      user: process.env.GMAIL_USER,
-      pass: process.env.GMAIL_APP_PASSWORD,
-    },
-  });
-
-  await transporter.sendMail({
-    from: `"Clearpath Contact" <${process.env.GMAIL_USER}>`,
-    to: process.env.GMAIL_USER,
+  await sgMail.send({
+    from: process.env.SENDGRID_FROM_EMAIL!,
+    to: process.env.SENDGRID_TO_EMAIL!,
     replyTo: email,
     subject: `New message from ${name} — Clearpath Data`,
     html: `
