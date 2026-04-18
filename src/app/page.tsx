@@ -28,7 +28,7 @@ export default function Home() {
                   of your inventory again
                 </h1>
 
-                <p className="mt-6 max-w-md text-base text-white [text-shadow:0_1px_6px_rgba(0,0,0,0.6)]">
+                <p className="mt-6 max-w-md text-base text-white">
                   We help small and mid-sized retailers improve inventory
                   decisions using analytics, automation, and scalable cloud
                   data infrastructure.
@@ -279,13 +279,14 @@ export default function Home() {
       </section>
 
       {/* ── EARLY ACCESS ─────────────────────────────────── */}
-      <section id="early-access" className="bg-[#F7F9FC] py-16">
-        <div className="mx-auto max-w-6xl px-5 text-center">
+      <section id="early-access" className="bg-white py-16">
+        <div className="mx-auto max-w-6xl px-5">
           <Reveal>
-            <h2 className="text-3xl font-semibold tracking-tight text-neutral-900">
+            <p className="text-sm font-semibold text-[#ef9f38]">Early Access</p>
+            <h2 className="mt-2 text-3xl font-bold text-neutral-900">
               Be among the first retailers to pilot Clearpath
             </h2>
-            <p className="mt-4 text-base text-neutral-600 max-w-xl mx-auto">
+            <p className="mt-2 text-sm text-[#64b8c0] italic">
               We&apos;re onboarding a limited number of retailers to validate the MVP
               in real environments and shape the product roadmap.
             </p>
@@ -328,15 +329,19 @@ export default function Home() {
       </section>
 
       {/* ── WHY IT MATTERS ───────────────────────────────── */}
-      <section id="why-it-matters" className="bg-[#1A2E4A] py-16">
+      <section id="why-it-matters" className="bg-[#0F2044] py-16">
         <div className="mx-auto max-w-6xl px-5">
           <Reveal>
-            <h2 className="text-center text-3xl font-semibold tracking-tight text-white">
+            <p className="text-sm font-semibold text-[#ef9f38]">Why it matters</p>
+            <h2 className="mt-2 text-3xl font-bold text-white">
               Inventory problems are cash-flow problems
             </h2>
+            <p className="mt-2 text-sm text-[#64b8c0] italic max-w-3xl">
+              Small and mid-sized retailers operate without the data infrastructure that large chains take for granted. Clearpath closes that gap — without needing an internal analytics team.
+            </p>
           </Reveal>
 
-          <div className="mt-10 grid gap-5 md:grid-cols-3">
+          <div className="mt-10 grid gap-5 md:grid-cols-2">
             <Reveal delay={0.0}>
               <MiniCard dark title="">
                 Inventory inefficiency is a major source of cash-flow
@@ -352,10 +357,12 @@ export default function Home() {
             </Reveal>
 
             <Reveal delay={0.16}>
-              <MiniCard dark title="">
-                More resilient retail operations strengthen local economies and
-                supply-chain reliability.
-              </MiniCard>
+              <div className="md:col-span-2">
+                <MiniCard dark title="">
+                  More resilient retail operations strengthen local economies and
+                  supply-chain reliability.
+                </MiniCard>
+              </div>
             </Reveal>
           </div>
         </div>
