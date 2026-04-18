@@ -226,10 +226,10 @@ export default function Home() {
         <div className="mx-auto max-w-6xl px-5">
           <Reveal>
             <h2 className="text-3xl font-bold text-neutral-900">Architecture</h2>
-            <p className="mt-2 text-sm text-[#64b8c0] italic">
+            <p className="mt-2 text-sm text-[#112b50] italic">
               A modular, cloud-ready analytics architecture designed for reliable inventory decision-making.
             </p>
-            <p className="text-sm text-[#64b8c0] italic">
+            <p className="text-sm text-[#112b50] italic">
               The architecture reflects a reusable analytical framework developed to address recurring inventory
               decision challenges across different retail environments
             </p>
