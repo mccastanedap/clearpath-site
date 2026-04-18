@@ -11,8 +11,8 @@ export default function Home() {
       {/* ── HERO ─────────────────────────────────────────── */}
       <section className="relative overflow-hidden bg-white py-16 md:py-24">
         {/* Decorative blobs */}
-        <div className="pointer-events-none absolute -top-24 -right-24 w-[480px] h-[480px] rounded-full bg-[#64b8c0]/10 blur-3xl" />
-        <div className="pointer-events-none absolute bottom-0 -left-16 w-[320px] h-[320px] rounded-full bg-[#112b50]/5 blur-2xl" />
+        <div className="pointer-events-none absolute -top-32 -right-32 w-[680px] h-[680px] rounded-full bg-[#64b8c0]/15 blur-3xl" />
+        <div className="pointer-events-none absolute bottom-0 -left-24 w-[480px] h-[480px] rounded-full bg-[#112b50]/8 blur-3xl" />
 
         <div className="relative mx-auto max-w-6xl px-5">
           <div className="grid gap-12 md:grid-cols-2 md:items-center">
