@@ -123,7 +123,7 @@ export default function Home() {
       </section>
 
       {/* ── HOW IT WORKS ─────────────────────────────────── */}
-      <section id="how-it-works" className="bg-white py-16">
+      <section id="how-it-works" className="bg-[#f0f7f8] py-16">
         <div className="mx-auto max-w-6xl px-5">
           <Reveal>
             <p className="text-sm font-semibold text-[#ef9f38]">How it works</p>
@@ -276,7 +276,7 @@ export default function Home() {
       </section>
 
       {/* ── EARLY ACCESS ─────────────────────────────────── */}
-      <section id="early-access" className="bg-white py-16">
+      <section id="early-access" className="bg-[#f0f7f8] py-16">
         <div className="mx-auto max-w-6xl px-5">
           <Reveal>
             <p className="text-sm font-semibold text-[#ef9f38]">Early Access</p>
