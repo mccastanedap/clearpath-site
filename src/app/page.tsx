@@ -2,6 +2,7 @@ import Reveal from "@/components/Reveal";
 import WideCard from "@/components/WideCard";
 import MiniCard from "@/components/MiniCard";
 import ContactForm from "@/components/ContactForm";
+import InsightsFeed from "@/components/InsightsFeed";
 
 export default function Home() {
   return (
@@ -52,58 +53,9 @@ export default function Home() {
               </div>
             </Reveal>
 
-            {/* Right — chart card + stats */}
+            {/* Right — live insights feed */}
             <Reveal delay={0.1}>
-              <div className="w-full">
-                {/* Chart card */}
-                <div className="rounded-2xl bg-[#162B52] p-5 shadow-lg">
-                  <p className="text-xs font-medium text-neutral-400">
-                    Inventory health · last 8 weeks
-                  </p>
-                  <div className="mt-4 flex items-end gap-[6px] h-28">
-                    {[38, 52, 44, 60, 55, 68, 62, 88].map((h, i) => (
-                      <div
-                        key={i}
-                        className="flex-1 rounded-sm"
-                        style={{
-                          height: `${h}%`,
-                          backgroundColor: i === 7 ? "#ef9f38" : "#2D5B8A",
-                        }}
-                      />
-                    ))}
-                  </div>
-
-                  {/* Alert row */}
-                  <div className="mt-4 flex items-center justify-between rounded-lg bg-[#0F2044] px-3 py-2">
-                    <span className="text-[11px] text-neutral-400">
-                      Product #A1203 · Low stock alert
-                    </span>
-                    <span className="rounded-full bg-[#ef9f38] px-2.5 py-0.5 text-[10px] font-semibold text-white">
-                      Reorder now
-                    </span>
-                  </div>
-
-                  {/* Stats */}
-                  <div className="mt-3 grid grid-cols-3 divide-x divide-white/10">
-                    <div className="pr-3">
-                      <div className="text-lg font-bold text-white">
-                        94 <span className="text-[#64b8c0] text-sm">↑</span>
-                      </div>
-                      <div className="text-[10px] text-neutral-500">Stock health</div>
-                    </div>
-                    <div className="px-3">
-                      <div className="text-lg font-bold text-white">3</div>
-                      <div className="text-[10px] text-neutral-500">Reorder signals</div>
-                    </div>
-                    <div className="pl-3">
-                      <div className="text-lg font-bold text-white">
-                        12% <span className="text-red-400 text-sm">↓</span>
-                      </div>
-                      <div className="text-[10px] text-neutral-500">Overstock</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <InsightsFeed />
             </Reveal>
           </div>
         </div>
