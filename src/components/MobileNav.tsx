@@ -39,16 +39,28 @@ export default function MobileNav() {
         <span className={`block w-5 h-[2px] bg-[#112b50] rounded transition-all duration-300 ${open ? "-rotate-45 -translate-y-[7px]" : ""}`} />
       </button>
 
-      {/* Overlay */}
+      {/* Overlay + Drawer — rendered with inline styles to bypass Framer Motion stacking contexts */}
       {open && (
         <div
-          className="fixed inset-0 bg-black/30 z-[998]"
+          style={{ position: "fixed", inset: 0, backgroundColor: "rgba(0,0,0,0.3)", zIndex: 9998 }}
           onClick={() => setOpen(false)}
         />
       )}
 
-      {/* Drawer */}
-      <div className={`fixed top-0 right-0 h-full w-full bg-white z-[999] shadow-xl transform transition-transform duration-300 ease-in-out ${open ? "translate-x-0" : "translate-x-full"}`}>
+      <div
+        style={{
+          position: "fixed",
+          top: 0,
+          right: 0,
+          height: "100%",
+          width: "100%",
+          backgroundColor: "#ffffff",
+          zIndex: 9999,
+          transform: open ? "translateX(0)" : "translateX(100%)",
+          transition: "transform 0.3s ease-in-out",
+          boxShadow: "-4px 0 24px rgba(0,0,0,0.08)",
+        }}
+      >
         <div className="flex items-center justify-between px-6 py-5 border-b border-neutral-100">
           <div className="leading-[1.2]">
             <div className="text-base font-semibold">
