@@ -42,13 +42,13 @@ export default function MobileNav() {
       {/* Overlay */}
       {open && (
         <div
-          className="fixed inset-0 bg-black/20 z-30 backdrop-blur-sm"
+          className="fixed inset-0 bg-black/30 z-[998]"
           onClick={() => setOpen(false)}
         />
       )}
 
       {/* Drawer */}
-      <div className={`fixed top-0 right-0 h-full w-full bg-white z-40 shadow-xl transform transition-transform duration-300 ease-in-out ${open ? "translate-x-0" : "translate-x-full"}`}>
+      <div className={`fixed top-0 right-0 h-full w-full bg-white z-[999] shadow-xl transform transition-transform duration-300 ease-in-out ${open ? "translate-x-0" : "translate-x-full"}`}>
         <div className="flex items-center justify-between px-6 py-5 border-b border-neutral-100">
           <div className="leading-[1.2]">
             <div className="text-base font-semibold">
