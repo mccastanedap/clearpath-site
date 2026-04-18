@@ -9,28 +9,28 @@ export default function Home() {
     <div id="top">
 
       {/* ── HERO ─────────────────────────────────────────── */}
-      <section
-        className="relative overflow-hidden py-16 md:py-24"
-        style={{
-          backgroundImage: "url('/Hero.png')",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
-      >
+      <section className="relative overflow-hidden bg-white py-16 md:py-24">
+        {/* Subtle teal blob */}
+        <div className="pointer-events-none absolute -top-32 -right-32 w-[500px] h-[500px] rounded-full bg-[#64b8c0]/10 blur-3xl" />
+        <div className="pointer-events-none absolute bottom-0 -left-20 w-[300px] h-[300px] rounded-full bg-[#112b50]/5 blur-2xl" />
+
         <div className="relative mx-auto max-w-6xl px-5">
           <div className="grid gap-12 md:grid-cols-2 md:items-center">
 
             {/* Left copy */}
             <Reveal>
               <div>
-                <h1 className="text-4xl font-semibold tracking-tight text-white md:text-5xl leading-tight">
+                <span className="inline-block rounded-full bg-[#64b8c0]/10 px-4 py-1.5 text-xs font-semibold text-[#64b8c0] mb-5">
+                  Inventory analytics for modern retailers
+                </span>
+                <h1 className="text-4xl font-semibold tracking-tight text-[#112b50] md:text-5xl leading-tight">
                   Never lose{" "}
                   <span className="text-[#ef9f38]">track</span>
                   <br />
                   of your inventory again
                 </h1>
 
-                <p className="mt-6 max-w-md text-base text-white">
+                <p className="mt-6 max-w-md text-base text-neutral-600">
                   We help small and mid-sized retailers improve inventory
                   decisions using analytics, automation, and scalable cloud
                   data infrastructure.
@@ -39,13 +39,13 @@ export default function Home() {
                 <div className="mt-8 flex flex-wrap gap-3">
                   <a
                     href="#contact"
-                    className="rounded-full bg-[#64b8c0] px-7 py-3 text-sm font-semibold text-white hover:opacity-90 transition"
+                    className="rounded-full bg-[#64b8c0] px-7 py-3 text-sm font-semibold text-white hover:opacity-90 transition shadow-sm"
                   >
                     Contact us
                   </a>
                   <a
                     href="#how-it-works"
-                    className="rounded-full border border-white/60 px-7 py-3 text-sm font-semibold text-white hover:bg-white/10 transition"
+                    className="rounded-full border border-[#112b50]/30 px-7 py-3 text-sm font-semibold text-[#112b50] hover:bg-[#112b50]/5 transition"
                   >
                     See How it works
                   </a>
@@ -55,7 +55,7 @@ export default function Home() {
 
             {/* Right — live insights feed */}
             <Reveal delay={0.1}>
-              <InsightsFeed />
+              <InsightsFeed light />
             </Reveal>
           </div>
         </div>
