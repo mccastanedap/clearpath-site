@@ -56,12 +56,15 @@ export default function MobileNav() {
       >
         {/* Header */}
         <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "20px 24px", borderBottom: "1px solid #f5f5f5" }}>
-          <div style={{ lineHeight: 1.2 }}>
-            <div style={{ fontSize: 16, fontWeight: 600 }}>
-              <span style={{ color: "#112b50" }}>Clear</span>
-              <span style={{ color: "#ef9f38" }}>path</span>
+          <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
+            <img src="/logo.svg" alt="Clearpath" style={{ height: 40, width: "auto", display: "block" }} />
+            <div style={{ lineHeight: 1.2 }}>
+              <div style={{ fontSize: 16, fontWeight: 600 }}>
+                <span style={{ color: "#112b50" }}>Clear</span>
+                <span style={{ color: "#ef9f38" }}>path</span>
+              </div>
+              <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: "0.2em", color: "#64b8c0" }}>DATA</div>
             </div>
-            <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: "0.2em", color: "#64b8c0" }}>DATA</div>
           </div>
           <button
             onClick={() => setOpen(false)}
