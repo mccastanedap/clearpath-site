@@ -23,17 +23,32 @@ export default function Home() {
             <Reveal>
               <div>
                 <h1 className="text-4xl font-semibold tracking-tight text-white md:text-5xl leading-tight">
-                  Never lose{" "}
-                  <span className="text-[#ef9f38]">track</span>
+                  Get your products{" "}
+                  <span className="text-[#ef9f38]">moving</span>
                   <br />
-                  of your inventory again
+                  2× faster — without the guesswork
                 </h1>
 
                 <p className="mt-6 max-w-md text-base text-white">
-                  We help small and mid-sized retailers improve inventory
-                  decisions using analytics, automation, and scalable cloud
-                  data infrastructure.
+                  Clearpath gives small and mid-sized retailers the same
+                  data power as large chains — cutting stockouts, reducing
+                  overstock, and turning inventory data into cash flow.
                 </p>
+
+                <div className="mt-6 flex flex-wrap gap-4">
+                  {[
+                    "↓ 40% fewer stockouts",
+                    "↓ 30% less overstock",
+                    "↑ 2× faster reorder cycles",
+                  ].map((stat) => (
+                    <span
+                      key={stat}
+                      className="rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-xs font-semibold text-white"
+                    >
+                      {stat}
+                    </span>
+                  ))}
+                </div>
 
                 <div className="mt-8 flex flex-wrap gap-3">
                   <a
@@ -271,7 +286,7 @@ export default function Home() {
                     <span className="hidden md:block absolute -right-4 top-3 text-[#64b8c0] text-lg select-none">→</span>
                   )}
                   {/* Description */}
-                  <p className="mt-5 text-sm leading-relaxed text-neutral-600">{item.desc}</p>
+                  <p className="mt-5 text-sm leading-relaxed text-[#64b8c0] italic">{item.desc}</p>
                 </div>
               ))}
             </div>
