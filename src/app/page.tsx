@@ -135,36 +135,52 @@ export default function Home() {
             </p>
           </Reveal>
 
-          <div className="mt-10 grid gap-6 md:grid-cols-3">
+          <div className="mt-12 grid gap-0 md:grid-cols-3">
             {[
               {
+                step: "01",
                 title: "Connect your systems",
                 body: "We securely ingest sales, inventory, and POS data from your existing tools. No disruption to your operations.",
                 label: "Examples:",
                 sub: "POS · Inventory · Sales exports",
               },
               {
-                title: "Act with confidence",
-                body: "You receive clear, actionable insights to improve stock health, optimize reordering, and understand product performance.",
-                label: "Outcomes:",
-                sub: "Fewer stockouts · Reduced overstock · Better cash flow",
-              },
-              {
+                step: "02",
                 title: "Clean & analyze",
                 body: "We validate, standardize, and model your data using automated analytics pipelines built for accuracy and scale.",
                 label: "Keywords:",
                 sub: "Validation · Trends · Forecast-ready",
               },
-            ].map((card, i) => (
-              <Reveal key={card.title} delay={i * 0.08}>
-                <div className="flex flex-col">
-                  <div className="rounded-2xl border border-neutral-200 bg-white px-6 py-7 text-center shadow-sm flex-1">
-                    <h3 className="text-base font-semibold text-neutral-900">{card.title}</h3>
-                    <p className="mt-3 text-sm leading-relaxed text-neutral-600">{card.body}</p>
-                  </div>
-                  <div className="mt-4 text-center">
-                    <span className="text-xs font-semibold text-[#64b8c0]">{card.label}</span>
-                    <p className="mt-0.5 text-xs text-neutral-500">{card.sub}</p>
+              {
+                step: "03",
+                title: "Act with confidence",
+                body: "You receive clear, actionable insights to improve stock health, optimize reordering, and understand product performance.",
+                label: "Outcomes:",
+                sub: "Fewer stockouts · Reduced overstock · Better cash flow",
+              },
+            ].map((card, i, arr) => (
+              <Reveal key={card.step} delay={i * 0.08}>
+                <div className="relative flex flex-col">
+                  {/* Connector line between steps */}
+                  {i < arr.length - 1 && (
+                    <div className="hidden md:block absolute top-[2.15rem] left-1/2 w-full h-[2px] bg-gradient-to-r from-[#64b8c0] to-[#64b8c0]/20 z-0" />
+                  )}
+
+                  <div className="relative z-10 flex flex-col items-center text-center px-6">
+                    {/* Step circle */}
+                    <div className="w-16 h-16 rounded-full bg-[#112b50] border-4 border-white shadow-md flex items-center justify-center mb-5">
+                      <span className="text-lg font-bold text-[#64b8c0]">{card.step}</span>
+                    </div>
+
+                    <div className="rounded-2xl border border-neutral-200 bg-white px-6 py-6 shadow-sm w-full">
+                      <h3 className="text-base font-semibold text-neutral-900">{card.title}</h3>
+                      <p className="mt-3 text-sm leading-relaxed text-neutral-600">{card.body}</p>
+                    </div>
+
+                    <div className="mt-4">
+                      <span className="text-xs font-semibold text-[#64b8c0]">{card.label}</span>
+                      <p className="mt-0.5 text-xs text-neutral-500">{card.sub}</p>
+                    </div>
                   </div>
                 </div>
               </Reveal>
@@ -187,45 +203,73 @@ export default function Home() {
             </p>
           </Reveal>
 
-          {/* Pills + descriptions: cada columna tiene su pill encima y su texto abajo */}
           <Reveal delay={0.1}>
-            <div className="mt-10 grid md:grid-cols-4 gap-6">
-              {[
-                {
-                  label: "Data Sources",
-                  sub: "POS · Inventory · Sales",
-                  desc: "Data ingestion — POS, inventory, and sales data ingested through standardized exports.",
-                },
-                {
-                  label: "Ingestion & Validation",
-                  sub: "",
-                  desc: "Validation & normalization — Rule-based checks ensure schema consistency and data quality.",
-                },
-                {
-                  label: "Analytics & Modeling",
-                  sub: "",
-                  desc: "Analytics & modeling — Standardized models support trend analysis, inventory health, and forecasting.",
-                },
-                {
-                  label: "Insights Layer",
-                  sub: "",
-                  desc: "Insight delivery — Clear outputs for reordering decisions and performance monitoring.",
-                },
-              ].map((item, i, arr) => (
-                <div key={item.label} className="relative flex flex-col">
-                  {/* Pill */}
-                  <div className={`rounded-full px-5 py-3 text-center ${i === 0 ? "bg-[#112b50]" : "bg-[#1e3a5f]"}`}>
-                    <div className="text-sm font-semibold text-white leading-tight">{item.label}</div>
-                    {item.sub && <div className="mt-0.5 text-[11px] text-neutral-400">{item.sub}</div>}
+            {/* Flow diagram */}
+            <div className="mt-10 relative">
+              {/* Horizontal connector line (desktop) */}
+              <div className="hidden md:block absolute top-[28px] left-[12.5%] right-[12.5%] h-[2px] bg-gradient-to-r from-[#112b50] via-[#64b8c0] to-[#64b8c0]/40" />
+
+              <div className="grid md:grid-cols-4 gap-6">
+                {[
+                  {
+                    label: "Data Sources",
+                    sub: "POS · Inventory · Sales",
+                    icon: (
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14c0 1.66 4.03 3 9 3s9-1.34 9-3V5"/>
+                        <path d="M3 12c0 1.66 4.03 3 9 3s9-1.34 9-3"/>
+                      </svg>
+                    ),
+                    desc: "POS, inventory, and sales data ingested through standardized exports — no disruption to operations.",
+                  },
+                  {
+                    label: "Ingestion & Validation",
+                    sub: "",
+                    icon: (
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
+                      </svg>
+                    ),
+                    desc: "Rule-based checks ensure schema consistency and data quality before any analysis runs.",
+                  },
+                  {
+                    label: "Analytics & Modeling",
+                    sub: "",
+                    icon: (
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/>
+                        <line x1="6" y1="20" x2="6" y2="14"/>
+                      </svg>
+                    ),
+                    desc: "Standardized models support trend analysis, inventory health scoring, and forecast-ready outputs.",
+                  },
+                  {
+                    label: "Insights Layer",
+                    sub: "",
+                    icon: (
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/>
+                        <line x1="12" y1="16" x2="12.01" y2="16"/>
+                      </svg>
+                    ),
+                    desc: "Clear outputs for reordering decisions, performance monitoring, and cash-flow visibility.",
+                  },
+                ].map((item, i) => (
+                  <div key={item.label} className="relative flex flex-col items-center text-center">
+                    {/* Node circle */}
+                    <div className={`relative z-10 w-14 h-14 rounded-full flex items-center justify-center mb-4 border-2 shadow-sm ${i === 0 ? "bg-[#112b50] border-[#112b50] text-white" : "bg-white border-[#64b8c0] text-[#64b8c0]"}`}>
+                      {item.icon}
+                    </div>
+                    {/* Label pill */}
+                    <div className={`rounded-full px-4 py-2 text-center w-full ${i === 0 ? "bg-[#112b50]" : "bg-[#f0f9fa] border border-[#64b8c0]/30"}`}>
+                      <div className={`text-xs font-semibold leading-tight ${i === 0 ? "text-white" : "text-[#112b50]"}`}>{item.label}</div>
+                      {item.sub && <div className="mt-0.5 text-[10px] text-neutral-400">{item.sub}</div>}
+                    </div>
+                    {/* Description */}
+                    <p className="mt-4 text-xs leading-relaxed text-[#112b50] italic">{item.desc}</p>
                   </div>
-                  {/* Arrow between pills (desktop) */}
-                  {i < arr.length - 1 && (
-                    <span className="hidden md:block absolute -right-4 top-3 text-[#64b8c0] text-lg select-none">→</span>
-                  )}
-                  {/* Description */}
-                  <p className="mt-5 text-sm leading-relaxed text-neutral-600">{item.desc}</p>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
           </Reveal>
         </div>
