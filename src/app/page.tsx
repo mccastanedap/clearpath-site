@@ -9,28 +9,28 @@ export default function Home() {
     <div id="top">
 
       {/* ── HERO ─────────────────────────────────────────── */}
-      <section
-        className="relative overflow-hidden py-16 md:py-24"
-        style={{
-          backgroundImage: "url('/Hero.png')",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
-      >
+      <section className="relative overflow-hidden bg-white py-16 md:py-24">
+        {/* Decorative blobs */}
+        <div className="pointer-events-none absolute -top-24 -right-24 w-[480px] h-[480px] rounded-full bg-[#64b8c0]/10 blur-3xl" />
+        <div className="pointer-events-none absolute bottom-0 -left-16 w-[320px] h-[320px] rounded-full bg-[#112b50]/5 blur-2xl" />
+
         <div className="relative mx-auto max-w-6xl px-5">
           <div className="grid gap-12 md:grid-cols-2 md:items-center">
 
             {/* Left copy */}
             <Reveal>
               <div>
-                <h1 className="text-4xl font-semibold tracking-tight text-white md:text-5xl leading-tight">
+                <span className="inline-block rounded-full bg-[#64b8c0]/10 px-4 py-1.5 text-xs font-semibold text-[#64b8c0] mb-5">
+                  Inventory analytics for modern retailers
+                </span>
+                <h1 className="text-4xl font-semibold tracking-tight text-[#112b50] md:text-5xl leading-tight">
                   Never lose{" "}
                   <span className="text-[#ef9f38]">track</span>
                   <br />
                   of your inventory again
                 </h1>
 
-                <p className="mt-6 max-w-md text-base text-white">
+                <p className="mt-6 max-w-md text-base text-neutral-600">
                   We help small and mid-sized retailers improve inventory
                   decisions using analytics, automation, and scalable cloud
                   data infrastructure.
@@ -39,13 +39,13 @@ export default function Home() {
                 <div className="mt-8 flex flex-wrap gap-3">
                   <a
                     href="#contact"
-                    className="rounded-full bg-[#64b8c0] px-7 py-3 text-sm font-semibold text-white hover:opacity-90 transition"
+                    className="rounded-full bg-[#64b8c0] px-7 py-3 text-sm font-semibold text-white hover:opacity-90 transition shadow-sm"
                   >
                     Contact us
                   </a>
                   <a
                     href="#how-it-works"
-                    className="rounded-full border border-white/60 px-7 py-3 text-sm font-semibold text-white hover:bg-white/10 transition"
+                    className="rounded-full border border-[#112b50]/25 px-7 py-3 text-sm font-semibold text-[#112b50] hover:bg-[#112b50]/5 transition"
                   >
                     See How it works
                   </a>
@@ -55,7 +55,7 @@ export default function Home() {
 
             {/* Right — live insights feed */}
             <Reveal delay={0.1}>
-              <InsightsFeed />
+              <InsightsFeed light />
             </Reveal>
           </div>
         </div>
@@ -326,14 +326,14 @@ export default function Home() {
       </section>
 
       {/* ── WHY IT MATTERS ───────────────────────────────── */}
-      <section id="why-it-matters" className="bg-[#0F2044] py-20">
+      <section id="why-it-matters" className="bg-[#f0f7f8] py-20">
         <div className="mx-auto max-w-6xl px-5">
           <Reveal>
             <p className="text-sm font-semibold text-[#ef9f38]">Why it matters</p>
-            <h2 className="mt-2 text-3xl font-bold text-white">
+            <h2 className="mt-2 text-3xl font-bold text-[#112b50]">
               Inventory problems are cash-flow problems
             </h2>
-            <p className="mt-3 text-sm text-[#64b8c0] italic max-w-2xl">
+            <p className="mt-3 text-sm text-[#112b50] italic max-w-2xl">
               Small and mid-sized retailers operate without the data infrastructure that large chains take for granted. Clearpath closes that gap — without needing an internal analytics team.
             </p>
           </Reveal>
@@ -369,13 +369,13 @@ export default function Home() {
               },
             ].map((item, i) => (
               <Reveal key={item.stat} delay={i * 0.08}>
-                <div className="rounded-2xl border border-white/10 bg-[#162540] px-7 py-8 flex flex-col gap-4 hover:border-[#64b8c0]/40 transition-colors">
-                  <div className="w-11 h-11 rounded-full bg-[#0F2044] border border-[#64b8c0]/30 flex items-center justify-center flex-shrink-0">
+                <div className="rounded-2xl border border-[#64b8c0]/20 bg-white px-7 py-8 flex flex-col gap-4 hover:border-[#64b8c0]/50 hover:shadow-sm transition-all">
+                  <div className="w-11 h-11 rounded-full bg-[#f0f7f8] border border-[#64b8c0]/30 flex items-center justify-center flex-shrink-0">
                     {item.icon}
                   </div>
                   <div>
-                    <p className="text-base font-semibold text-white">{item.stat}</p>
-                    <p className="mt-2 text-sm leading-relaxed text-neutral-400">{item.body}</p>
+                    <p className="text-base font-semibold text-[#112b50]">{item.stat}</p>
+                    <p className="mt-2 text-sm leading-relaxed text-neutral-500">{item.body}</p>
                   </div>
                 </div>
               </Reveal>
