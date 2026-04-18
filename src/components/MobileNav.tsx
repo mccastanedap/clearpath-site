@@ -48,7 +48,7 @@ export default function MobileNav() {
       )}
 
       {/* Drawer */}
-      <div className={`fixed top-0 right-0 h-full w-72 bg-white z-40 shadow-xl transform transition-transform duration-300 ease-in-out ${open ? "translate-x-0" : "translate-x-full"}`}>
+      <div className={`fixed top-0 right-0 h-full w-full bg-white z-40 shadow-xl transform transition-transform duration-300 ease-in-out ${open ? "translate-x-0" : "translate-x-full"}`}>
         <div className="flex items-center justify-between px-6 py-5 border-b border-neutral-100">
           <div className="leading-[1.2]">
             <div className="text-base font-semibold">
