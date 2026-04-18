@@ -11,8 +11,8 @@ export default function Home() {
       {/* ── HERO ─────────────────────────────────────────── */}
       <section className="relative overflow-hidden bg-white py-16 md:py-24">
         {/* Decorative blobs */}
-        <div className="pointer-events-none absolute -top-32 -right-32 w-[680px] h-[680px] rounded-full bg-[#64b8c0]/15 blur-3xl" />
-        <div className="pointer-events-none absolute bottom-0 -left-24 w-[480px] h-[480px] rounded-full bg-[#112b50]/8 blur-3xl" />
+        <div className="pointer-events-none absolute -top-32 -right-32 w-[580px] h-[580px] rounded-full bg-[#64b8c0]/10 blur-3xl" />
+        <div className="pointer-events-none absolute bottom-0 -left-24 w-[380px] h-[380px] rounded-full bg-[#112b50]/5 blur-3xl" />
 
         <div className="relative mx-auto max-w-6xl px-5">
           <div className="grid gap-12 md:grid-cols-2 md:items-center">
@@ -190,7 +190,7 @@ export default function Home() {
       </section>
 
       {/* ── ARCHITECTURE ─────────────────────────────────── */}
-      <section id="architecture" className="bg-white py-16">
+      <section id="architecture" className="bg-[#f0f7f8] py-16">
         <div className="mx-auto max-w-6xl px-5">
           <Reveal>
             <h2 className="text-3xl font-bold text-neutral-900">Architecture</h2>
@@ -276,7 +276,7 @@ export default function Home() {
       </section>
 
       {/* ── EARLY ACCESS ─────────────────────────────────── */}
-      <section id="early-access" className="bg-[#f0f7f8] py-16">
+      <section id="early-access" className="bg-white py-16">
         <div className="mx-auto max-w-6xl px-5">
           <Reveal>
             <p className="text-sm font-semibold text-[#ef9f38]">Early Access</p>
