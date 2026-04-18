@@ -330,41 +330,60 @@ export default function Home() {
       </section>
 
       {/* ── WHY IT MATTERS ───────────────────────────────── */}
-      <section id="why-it-matters" className="bg-[#0F2044] py-16">
+      <section id="why-it-matters" className="bg-[#0F2044] py-20">
         <div className="mx-auto max-w-6xl px-5">
           <Reveal>
             <p className="text-sm font-semibold text-[#ef9f38]">Why it matters</p>
             <h2 className="mt-2 text-3xl font-bold text-white">
               Inventory problems are cash-flow problems
             </h2>
-            <p className="mt-2 text-sm text-[#64b8c0] italic max-w-3xl">
+            <p className="mt-3 text-sm text-[#64b8c0] italic max-w-2xl">
               Small and mid-sized retailers operate without the data infrastructure that large chains take for granted. Clearpath closes that gap — without needing an internal analytics team.
             </p>
           </Reveal>
 
-          <div className="mt-10 grid gap-5 md:grid-cols-2">
-            <Reveal delay={0.0}>
-              <MiniCard dark title="">
-                Inventory inefficiency is a major source of cash-flow
-                instability for small and mid-sized retailers.
-              </MiniCard>
-            </Reveal>
-
-            <Reveal delay={0.08}>
-              <MiniCard dark title="">
-                Data-driven inventory decisions reduce operational volatility
-                without requiring large internal analytics teams.
-              </MiniCard>
-            </Reveal>
-
-            <Reveal delay={0.16}>
-              <div className="md:col-span-2">
-                <MiniCard dark title="">
-                  More resilient retail operations strengthen local economies and
-                  supply-chain reliability.
-                </MiniCard>
-              </div>
-            </Reveal>
+          <div className="mt-12 grid gap-6 md:grid-cols-3">
+            {[
+              {
+                icon: (
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#64b8c0" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                    <line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                  </svg>
+                ),
+                stat: "Cash flow",
+                body: "Inventory inefficiency is a major source of cash-flow instability for small and mid-sized retailers.",
+              },
+              {
+                icon: (
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#64b8c0" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                    <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+                  </svg>
+                ),
+                stat: "Less volatility",
+                body: "Data-driven inventory decisions reduce operational volatility without requiring large internal analytics teams.",
+              },
+              {
+                icon: (
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#64b8c0" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                    <circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                  </svg>
+                ),
+                stat: "Stronger supply chains",
+                body: "More resilient retail operations strengthen local economies and supply-chain reliability.",
+              },
+            ].map((item, i) => (
+              <Reveal key={item.stat} delay={i * 0.08}>
+                <div className="rounded-2xl border border-white/10 bg-[#162540] px-7 py-8 flex flex-col gap-4 hover:border-[#64b8c0]/40 transition-colors">
+                  <div className="w-11 h-11 rounded-full bg-[#0F2044] border border-[#64b8c0]/30 flex items-center justify-center flex-shrink-0">
+                    {item.icon}
+                  </div>
+                  <div>
+                    <p className="text-base font-semibold text-white">{item.stat}</p>
+                    <p className="mt-2 text-sm leading-relaxed text-neutral-400">{item.body}</p>
+                  </div>
+                </div>
+              </Reveal>
+            ))}
           </div>
         </div>
       </section>
