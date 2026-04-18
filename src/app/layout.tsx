@@ -74,36 +74,36 @@ export default function RootLayout({
         <main>{children}</main>
 
         {/* FOOTER */}
-        <footer className="bg-neutral-50 border-t border-neutral-200">
+        <footer className="bg-[#112b50] border-t border-white/10">
           <div className="mx-auto max-w-6xl px-5 py-12 grid gap-10 md:grid-cols-2">
             {/* Left */}
             <div className="space-y-4">
               <div className="flex items-center gap-3">
-                <img src="/logo.svg" alt="Clearpath Data" className="h-10 w-auto" />
+                <img src="/logo.svg" alt="Clearpath Data" className="h-10 w-auto brightness-0 invert" />
                 <div className="leading-[1.2]">
                   <div className="text-base font-semibold">
-                    <span className="text-[#112b50]">Clear</span><span className="text-[#ef9f38]">path</span>
+                    <span className="text-white">Clear</span><span className="text-[#ef9f38]">path</span>
                   </div>
                   <div className="text-[11px] font-bold tracking-[0.2em] text-[#64b8c0]">DATA</div>
                 </div>
               </div>
 
-              <p className="text-sm text-neutral-500 max-w-sm">
+              <p className="text-sm text-neutral-400 max-w-sm">
                 Data-driven inventory analytics for modern retailers.
               </p>
 
-              <p className="text-sm text-neutral-400">
+              <p className="text-sm text-neutral-500">
                 © {new Date().getFullYear()} Clearpath Data. All rights reserved.
               </p>
 
-              <p className="text-sm text-neutral-400">
+              <p className="text-sm text-neutral-500">
                 Designed and operated as an independent analytics platform.
               </p>
             </div>
 
             {/* Right */}
             <div className="flex md:justify-end">
-              <nav className="flex flex-col gap-2 text-sm text-neutral-500">
+              <nav className="flex flex-col gap-2 text-sm text-neutral-400">
                 <a href="#who-its-for" className="hover:text-[#64b8c0] transition">Who is this for</a>
                 <a href="#how-it-works" className="hover:text-[#64b8c0] transition">How it works</a>
                 <a href="#architecture" className="hover:text-[#64b8c0] transition">Architecture</a>
