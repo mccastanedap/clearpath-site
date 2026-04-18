@@ -1,7 +1,6 @@
 import Reveal from "@/components/Reveal";
 import WideCard from "@/components/WideCard";
 import MiniCard from "@/components/MiniCard";
-import ContactForm from "@/components/ContactForm";
 import InsightsFeed from "@/components/InsightsFeed";
 
 export default function Home() {
@@ -392,13 +391,18 @@ export default function Home() {
             <h2 className="mt-2 text-3xl font-bold text-neutral-900">
               Interested in piloting Clearpath Data or learning more about our approach? Get in touch.
             </h2>
-            <p className="mt-2 text-sm text-neutral-500">
-              Response time: Typically within 12–24 hours ·{" "}
-              <a className="text-[#64b8c0] hover:underline" href="mailto:clearpathdata@gmail.com">
-                clearpathdata@gmail.com
-              </a>
+            <p className="mt-4 text-sm text-neutral-500">
+              Response time: Typically within 12–24 hours
             </p>
-            <ContactForm />
+            <a
+              href="mailto:clearpathdata@gmail.com"
+              className="mt-6 inline-flex items-center gap-3 rounded-full bg-[#64b8c0] px-8 py-4 text-sm font-semibold text-white hover:opacity-90 transition shadow-sm"
+            >
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+              </svg>
+              clearpathdata@gmail.com
+            </a>
           </Reveal>
         </div>
       </section>
