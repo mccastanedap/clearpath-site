@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Space_Grotesk } from "next/font/google";
 import "./globals.css";
+import MobileNav from "@/components/MobileNav";
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
@@ -61,12 +62,21 @@ export default function RootLayout({
               <NavItem href="#early-access">Early Access</NavItem>
               <NavItem href="#why-it-matters">Why it matters</NavItem>
               <a
+                href="/login"
+                className="rounded-full border border-[#112b50]/20 px-5 py-2 text-sm font-medium text-[#112b50] hover:bg-[#112b50]/5 transition"
+              >
+                Client Login
+              </a>
+              <a
                 href="#contact"
                 className="rounded-full bg-[#64b8c0] px-5 py-2 text-sm font-semibold text-white hover:opacity-90 transition"
               >
                 Contact us
               </a>
             </div>
+
+            {/* Mobile hamburger */}
+            <MobileNav />
           </div>
         </header>
 
