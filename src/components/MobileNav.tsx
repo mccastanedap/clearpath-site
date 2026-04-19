@@ -95,6 +95,13 @@ export default function MobileNav() {
           >
             Contact us
           </a>
+          <a
+            href="/login"
+            onClick={() => setOpen(false)}
+            style={{ marginTop: 10, borderRadius: 999, border: "1px solid rgba(17,43,80,0.2)", padding: "14px 20px", fontSize: 14, fontWeight: 500, color: "#112b50", textAlign: "center", textDecoration: "none" }}
+          >
+            Client Login
+          </a>
         </nav>
       </div>
     </>
