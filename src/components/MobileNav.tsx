@@ -4,11 +4,11 @@ import { useState, useEffect } from "react";
 import { createPortal } from "react-dom";
 
 const links = [
-  { href: "#who-its-for", label: "Who is this for" },
-  { href: "#how-it-works", label: "How it works" },
-  { href: "#architecture", label: "Architecture" },
-  { href: "#early-access", label: "Early Access" },
-  { href: "#why-it-matters", label: "Why it matters" },
+  { href: "/#who-its-for", label: "Who is this for" },
+  { href: "/#how-it-works", label: "How it works" },
+  { href: "/#architecture", label: "Architecture" },
+  { href: "/#early-access", label: "Early Access" },
+  { href: "/#why-it-matters", label: "Why it matters" },
 ];
 
 export default function MobileNav() {
@@ -89,7 +89,7 @@ export default function MobileNav() {
             </a>
           ))}
           <a
-            href="#contact"
+            href="/#contact"
             onClick={() => setOpen(false)}
             style={{ marginTop: 24, borderRadius: 999, backgroundColor: "#64b8c0", padding: "14px 20px", fontSize: 14, fontWeight: 600, color: "#ffffff", textAlign: "center", textDecoration: "none" }}
           >
