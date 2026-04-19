@@ -44,7 +44,7 @@ export default function RootLayout({
         <header className="sticky top-0 z-20 border-b border-neutral-200 bg-white/90 backdrop-blur">
           <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4">
             {/* Logo — izquierda */}
-            <a href="#top" className="flex items-center gap-3 flex-shrink-0">
+            <a href="/" className="flex items-center gap-3 flex-shrink-0">
               <img src="/logo.svg" alt="Clearpath Data" className="h-10 w-auto" />
               <div className="leading-[1.2]">
                 <div className="text-base font-semibold">
