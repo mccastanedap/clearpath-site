@@ -56,13 +56,13 @@ export default function RootLayout({
 
             {/* Nav + CTA — derecha juntos */}
             <div className="hidden md:flex items-center gap-7">
-              <NavItem href="#who-its-for">Who is this for</NavItem>
-              <NavItem href="#how-it-works">How it works</NavItem>
-              <NavItem href="#architecture">Architecture</NavItem>
-              <NavItem href="#early-access">Early Access</NavItem>
-              <NavItem href="#why-it-matters">Why it matters</NavItem>
+              <NavItem href="/#who-its-for">Who is this for</NavItem>
+              <NavItem href="/#how-it-works">How it works</NavItem>
+              <NavItem href="/#architecture">Architecture</NavItem>
+              <NavItem href="/#early-access">Early Access</NavItem>
+              <NavItem href="/#why-it-matters">Why it matters</NavItem>
               <a
-                href="#contact"
+                href="/#contact"
                 className="rounded-full bg-[#64b8c0] px-5 py-2 text-sm font-semibold text-white hover:opacity-90 transition"
               >
                 Contact us
