@@ -45,12 +45,14 @@ export default function LoginPage() {
               />
             </div>
 
-            <button
-              type="submit"
-              className="w-full rounded-xl bg-[#112b50] py-3 text-sm font-semibold text-white hover:bg-[#1a3a6b] transition mt-2"
+            <a
+              href="https://clearpath-retail.streamlit.app"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block w-full rounded-xl bg-[#112b50] py-3 text-sm font-semibold text-white hover:bg-[#1a3a6b] transition mt-2 text-center"
             >
               Sign in
-            </button>
+            </a>
           </form>
 
           <p className="mt-6 text-center text-xs text-neutral-400">
