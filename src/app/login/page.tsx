@@ -46,7 +46,7 @@ export default function LoginPage() {
             </div>
 
             <a
-              href="https://clearpath-retail.streamlit.app"
+              href="https://clearpath-sage.vercel.app"
               target="_blank"
               rel="noopener noreferrer"
               className="block w-full rounded-xl bg-[#112b50] py-3 text-sm font-semibold text-white hover:bg-[#1a3a6b] transition mt-2 text-center"
