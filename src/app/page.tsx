@@ -397,8 +397,8 @@ export default function Home() {
             </p>
             <p className="mt-1 text-sm text-neutral-500">
               Or email us directly at{" "}
-              <a href="mailto:clearpathdata@gmail.com" className="text-[#64b8c0] hover:underline font-medium">
-                clearpathdata@gmail.com
+              <a href="mailto:contact@clearpathdata.org" className="text-[#64b8c0] hover:underline font-medium">
+                contact@clearpathdata.org
               </a>
             </p>
             <ContactForm />

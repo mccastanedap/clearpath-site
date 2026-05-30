@@ -85,8 +85,8 @@ export default function ContactForm() {
       {status === "error" && (
         <p className="text-sm text-red-500">
           Something went wrong. Email us directly at{" "}
-          <a href="mailto:clearpathdata@gmail.com" className="underline">
-            clearpathdata@gmail.com
+          <a href="mailto:contact@clearpathdata.org" className="underline">
+            contact@clearpathdata.org
           </a>
         </p>
       )}
