@@ -96,8 +96,8 @@ export default function InsightsFeed({ light = false }: { light?: boolean }) {
         setTyping(false);
         setQueue((prev) => [next, ...prev].slice(0, MAX_VISIBLE));
         setNextIndex((n) => n + 1);
-      }, 2000);
-    }, 5000);
+      }, 2500);
+    }, 8000);
 
     return () => clearTimeout(timer);
   }, [nextIndex]);
