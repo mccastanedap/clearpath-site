@@ -1,4 +1,29 @@
+"use client";
+
+import { useState } from "react";
+import { supabase } from "@/lib/supabase";
+
 export default function LoginPage() {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
+
+  async function handleSubmit(e: React.FormEvent) {
+    e.preventDefault();
+    setError("");
+    setLoading(true);
+
+    const { error } = await supabase.auth.signInWithPassword({ email, password });
+
+    if (error) {
+      setError("Invalid email or password. Please try again.");
+      setLoading(false);
+    } else {
+      window.location.href = "https://clearpath-retail.streamlit.app";
+    }
+  }
+
   return (
     <div className="min-h-screen bg-[#f0f7f8] flex items-center justify-center px-5">
       <div className="w-full max-w-md">
@@ -22,13 +47,16 @@ export default function LoginPage() {
             Sign in with the credentials provided by Clearpath
           </p>
 
-          <form className="mt-8 space-y-5">
+          <form onSubmit={handleSubmit} className="mt-8 space-y-5">
             <div>
               <label className="block text-sm font-medium text-neutral-700 mb-1.5">
                 Email
               </label>
               <input
                 type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
                 placeholder="your@email.com"
                 className="w-full rounded-xl border border-neutral-200 bg-white px-4 py-3 text-sm text-neutral-900 placeholder-neutral-400 outline-none focus:border-[#64b8c0] focus:ring-2 focus:ring-[#64b8c0]/20 transition"
               />
@@ -40,19 +68,25 @@ export default function LoginPage() {
               </label>
               <input
                 type="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                required
                 placeholder="••••••••"
                 className="w-full rounded-xl border border-neutral-200 bg-white px-4 py-3 text-sm text-neutral-900 placeholder-neutral-400 outline-none focus:border-[#64b8c0] focus:ring-2 focus:ring-[#64b8c0]/20 transition"
               />
             </div>
 
-            <a
-              href="https://clearpath-retail.streamlit.app"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block w-full rounded-xl bg-[#112b50] py-3 text-sm font-semibold text-white hover:bg-[#1a3a6b] transition mt-2 text-center"
+            {error && (
+              <p className="text-sm text-red-500">{error}</p>
+            )}
+
+            <button
+              type="submit"
+              disabled={loading}
+              className="w-full rounded-xl bg-[#112b50] py-3 text-sm font-semibold text-white hover:bg-[#1a3a6b] transition mt-2 disabled:opacity-60 disabled:cursor-not-allowed"
             >
-              Sign in
-            </a>
+              {loading ? "Signing in…" : "Sign in"}
+            </button>
           </form>
 
           <p className="mt-6 text-center text-xs text-neutral-400">
